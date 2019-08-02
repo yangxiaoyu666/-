@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link rel="stylesheet" type="text/css" href="css/ks.html">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+        header{
+            width: 100%;
+            height: 1rem;
+            background-color: #06c1ae;
+            display: flex;
+            padding: 0 0.32rem 0 0.22rem;
+            box-sizing: border-box;
+            align-items: center;
+        }
+        .site{
+            width: 1rem;
+            height: 1rem;
+            color: #fff;
+            line-height: 1rem;
+            font-size: 0.3rem;
+            font-weight: 400;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .site:after{
+            content:"";
+            width: 0.2rem;
+            height: 0.2rem;
+            display: inline-block;
+            background-image: url("img/add.gif");
+            background-repeat: no-repeat;
+            position: relative;
+            top: 0.06rem;
+            left: 0.15rem;
+        }
+        .seek{
+            height: 0.64rem;
+            flex-grow: 1;
+            font-size: 0.26rem;
+            color:#65d9cc;
+            border-radius: 0.05rem;
+            outline: none;
+            border: none;
+            background-color: #05a494;
+        }
+
+        .seek:before{
+            content:"";
+            width: 0.4rem;
+            height: 0.4rem;
+            display: inline-block;
+            background-image: url("img/ss.gif");
+            background-repeat: no-repeat;
+            position: relative;
+            top: 0.18rem;
+            left: 0.18rem;
+            margin-right: 0.18rem;
+        }
+        .me{
+            width: 0.4rem;
+            height: 0.6rem;
+            color: #fff;
+            margin-left: 0.28rem;
+            display: inline-block;
+            font-size: 0.2rem;
+        }
+        .me:before{
+            content:"";
+            width: 0.4rem;
+            height: 0.4rem;
+            background-image: url("img/me.png");
+            display: inline-block;
+            background-repeat: no-repeat;
+            position: relative;
+            top: -0.1rem;
+            right: 0;
+        }
+        .banner{
+            width: 7.5rem;
+            height: 2.2rem;
+            position: relative;
+            border-bottom: 1px solid #c9c4b8;
+        }
+        .banner>img{
+            width: 7.5rem;
+            height: 2.2rem;
+        }
+        .banner>a{
+            font-size: 0.2rem;
+            color: #c9c4b8;
+            font-size: 0.21rem;
+            color: #16c5b4;
+            text-align: center;
+            text-decoration: none;
+            line-height: 0.7rem;
+        }
+        .app,.appapp{
+            width: 2.3rem;
+            height: 0.7rem;
+            border-radius: 0.3rem;
+            border: 1px solid #16c5b4;
+            display: inline-block;
+            position: absolute;
+            left: 1.39rem;
+            bottom: 0.22rem;
+        }
+        .banner>a.appapp{
+            left: 3.9rem;
+            color: #fff;
+            background-color:#16c5b4;
+        }
+        .more{
+            width: 100%;
+            height: 3.6rem;
+            padding: 0.2rem;
+            box-sizing: border-box;
+            display: flex;
+            flex-wrap: wrap;
+
+        }
+        .more>a{
+            width: 20%;
+            height: 1.4rem;
+            text-align: center;
+            display: inline-block;
+            text-decoration: none;
+        }
+        .more>a>img{
+            width: 0.8rem;
+            height: 0.8rem;
+        }
+        .more>a>div{
+            font-size: 0.23rem;
+            color: #666;
+        }
+        .like{
+            width: 100%;
+            height: 0.8rem;
+            line-height: 0.8rem;
+            margin-top: 0.2rem;
+        }
+        .like>h3{
+            font-size: 0.3rem;
+            color: #333;
+            /* width: 100%; */
+            height: 0.8rem;
+            text-indent: 0.22rem;
+            line-height: 0.8rem;
+        }
+        .youlike{
+            padding: 0.1rem;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .youlike>div{
+            width: 100%;
+            display: flex;
+            height: 1.6rem;
+            flex-wrap: wrap;
+            padding-top: 0.1rem;
+            padding-bottom: 0.1rem;
+            border-top: 1px solid #666;
+        }
+        .youlike>div>.picture{
+            width: 1.8rem;
+            height: 1.6rem;
+
+        }
+        .youlike>div img{
+            width: 1.8rem;
+            height: 1.6rem;
+        }
+        .youlike>div>.text{
+            margin-left: 0.2rem;
+        }
+        .youlike>div h4{
+            height: 0.47rem;
+            line-height: 0.47rem;
+            font-size: 0.27rem;
+            color: #333;
+        }
+        .youlike>div p{
+            height: 0.43rem;
+            line-height: 0.43rem;
+            font-size: 0.22rem;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a class="site" href="">广州</a>
+        <label class="seek" ><input  class="seek" type="" value="输入商家/品类/商圈" placeholder /></label>
+
+        <a class="me" data-href="">我的</a>
+    </header>
+    <div class="banner">
+        <img src="img/banner.gif" />
+        <a class="app" href="">打开美团APP</a>
+        <a class="appapp" href="">下载app优惠打</a>
+    </div>
+<!-- 更多 -->
+    <div class="more">
+        <a href=""><img src="img/1.jpg" /><div>美食</div></a>
+        <a href=""><img src="img/2.jpg" /><div>猫眼电影</div></a>
+        <a href=""><img src="img/3.jpg" /><div>酒店</div></a>
+        <a href=""><img src="img/4.jpg" /><div>休闲娱乐</div></a>
+        <a href=""><img src="img/5.jpg" /><div>外卖</div></a>
+        <a href=""><img src="img/6.jpg" /><div>KTV</div></a>
+        <a href=""><img src="img/7.jpg" /><div>周边游</div></a>
+        <a href=""><img src="img/8.jpg" /><div>丽人</div></a>
+        <a href=""><img src="img/9.jpg" /><div>小吃快餐</div></a>
+        <a href=""><img src="img/10.gif" /><div>火车票</div></a>
+    </div>
+    <div class="like">
+        <h3>猜你喜欢</h3>
+    </div>
+    <div class="youlike">
+        <div>
+            <div class="picture">
+                <img src="img/one.gif" />
+            </div>
+            <div class="text">
+                <h4>遇见小面</h4>
+                <p>[17点通用]小小酸辣粉一份</p>
+                <p style="color: #06c1ae">5.99元&nbsp;&nbsp;&nbsp;&nbsp;<small style="color: #666">门市价：9元</small></p>
+            </div>
+
+        </div>
+        <div>
+            <div class="picture">
+                <img src="img/one.gif" />
+            </div>
+            <div class="text">
+                <h4>遇见小面</h4>
+                <p>[17点通用]小小酸辣粉一份</p>
+                <p style="color: #06c1ae">5.99元&nbsp;&nbsp;&nbsp;&nbsp;<small style="color: #666">门市价：9元</small></p>
+            </div>
+        </div>
+        <div>
+            <div class="picture">
+                <img src="img/one.gif" />
+            </div>
+            <div class="text">
+                <h4>遇见小面</h4>
+                <p>[17点通用]小小酸辣粉一份</p>
+                <p style="color: #06c1ae">5.99元&nbsp;&nbsp;&nbsp;&nbsp;<small style="color: #666">门市价：9元</small></p>
+            </div>
+
+        </div>
+        <div>
+            <div class="picture">
+                <img src="img/one.gif" />
+            </div>
+            <div class="text">
+                <h4>遇见小面</h4>
+                <p>[17点通用]小小酸辣粉一份</p>
+                <p style="color: #06c1ae">5.99元&nbsp;&nbsp;&nbsp;&nbsp;<small style="color: #666">门市价：9元</small></p>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+    <script>
+        var dpr = window.devicePixelRatio;
+        var scale = 1 / dpr;
+        document.write('<meta name="viewport" content="width=device-width,initial-scale='+scale+'" />');
+        var w = document.documentElement.clientWidth || document.body.clientWidth;
+        var html  = document.getElementsByTagName("html")[0];
+        html.style.fontSize = w / 7.5+ "px";
+    </script>
+</body>
+</html>
